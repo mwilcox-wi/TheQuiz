@@ -32,7 +32,7 @@ public class QuizActivity extends FragmentActivity implements Q1Fragment.OnFragm
         Q1Fragment q1 = new Q1Fragment();
         q1.setArguments(getIntent().getExtras());
 
-        Q2_Fragment q2 = new Q2_Fragment();
+
 
 
         //TA implementation

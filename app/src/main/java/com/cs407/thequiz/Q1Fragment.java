@@ -1,5 +1,7 @@
 package com.cs407.thequiz;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -91,12 +93,16 @@ public class Q1Fragment extends Fragment implements View.OnClickListener{
                             Toast.LENGTH_SHORT).show();
                 }else {
 
-                    q1_submit.setClickable(false);
                     if (toto.isChecked()) {
                         QuizActivity.correct++;
-                        Toast.makeText(getActivity().getApplicationContext(),
-                                QuizActivity.correct, Toast.LENGTH_SHORT).show();
+
                     }
+
+                    Q2_Fragment q2 = new Q2_Fragment();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.quiz_fragment_container, q2);
+                    fragmentTransaction.commit();
 
 
 
