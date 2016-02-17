@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class QuizActivity extends FragmentActivity implements Q1Fragment.OnFragmentInteractionListener {
+public class QuizActivity extends FragmentActivity implements Q1Fragment.OnFragmentInteractionListener, Q2_Fragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +17,13 @@ public class QuizActivity extends FragmentActivity implements Q1Fragment.OnFragm
         Q1Fragment q1 = new Q1Fragment();
         q1.setArguments(getIntent().getExtras());
 
+        Q2_Fragment q2 = new Q2_Fragment();
+        q2.setArguments(getIntent().getExtras());
+
         //TA implementation
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.quiz_fragment_container, q1)
+                .replace(R.id.quiz_fragment_container, q2)
                 .addToBackStack(null)
                 .commit();
         //TA end
