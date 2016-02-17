@@ -7,6 +7,9 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 
 /**
@@ -17,11 +20,14 @@ import android.view.ViewGroup;
  * Use the {@link Q1Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Q1Fragment extends Fragment {
+public class Q1Fragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_Q1 = "Question 1";
     private static final String ARG_Q2 = "Question 2";
+
+    int correct;
+    View view;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,20 +64,44 @@ public class Q1Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_Q1);
             mParam2 = getArguments().getString(ARG_Q2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_q1, container, false);
+        view =  inflater.inflate(R.layout.fragment_q1, container, false);
+        Button q1_submit = (Button) view.findViewById(R.id.btn_q1_submit);
+        final RadioButton toto = (RadioButton) view.findViewById(R.id.toto);
+        q1_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Toast.makeText(getActivity().getApplicationContext(), "Submit was clicked", Toast.LENGTH_LONG).show();
+                if(toto.isChecked()){
+                    Toast.makeText(getActivity().getApplicationContext(), "Toto is correct", Toast.LENGTH_LONG).show();
+
+                }
+                else{
+                    Toast.makeText(getActivity().getApplicationContext(), "You are wrong", Toast.LENGTH_LONG).show();
+                }
+
+
+
+            }
+        });
+
+    return view;
     }
 
+
+
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    public void onClick(View v) {
+
     }
 
     @Override

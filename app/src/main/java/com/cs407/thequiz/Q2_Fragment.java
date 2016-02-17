@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -18,13 +20,14 @@ import android.widget.Button;
  * Use the {@link Q2_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Q2_Fragment extends Fragment {
+public class Q2_Fragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     int correct;
+    View view;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -70,14 +73,32 @@ public class Q2_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_q2_, container, false);
+        view = inflater.inflate(R.layout.fragment_q2, container, false);
+        Button q2_submit = (Button) view.findViewById(R.id.btn_submit_q2);
+        final EditText answer = (EditText) view.findViewById(R.id.answer);
+
+        q2_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String txt = answer.getText().toString();
+
+                if (txt.equalsIgnoreCase("Mozambique") || txt.equalsIgnoreCase("Moz")) {
+                    QuizActivity.correct++;
+                    Toast.makeText(getActivity().getApplicationContext(), "That is correct", Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+        });
+        return view;
     }
 
+
+
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    public void onClick(View v) {
+
     }
 
     @Override
