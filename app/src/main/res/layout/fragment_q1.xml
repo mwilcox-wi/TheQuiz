@@ -17,12 +17,18 @@
             android:id="@+id/q1_text"
             android:textAlignment="center"
             android:textColor="#000"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="41dp"
+            android:layout_marginTop="39dp"
             android:paddingEnd="5dp"
             android:paddingStart="5dp"
-            android:text="According to Toto, who blessed the rains down in Africa?" />
+            android:text="According to the 80&apos;s rock band Toto, who blessed the rains down in Africa?"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_alignStart="@+id/btn_q1_submit"
+    android:layout_marginStart="48dp">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -31,7 +37,8 @@
             android:id="@+id/god"
             android:checked="false"
             android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/simba" />
+            android:layout_alignStart="@+id/simba"
+            android:textSize="25dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -40,9 +47,8 @@
             android:id="@+id/simba"
             android:layout_below="@+id/god"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="45dp"
             android:checked="false"
-            android:layout_margin="10dp" />
+            android:textSize="25dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -50,20 +56,20 @@
             android:text="Toto"
             android:id="@+id/toto"
             android:checked="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_below="@+id/simba"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textSize="25dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nelson Mandela"
-            android:id="@+id/radioButton"
+            android:text="Shaka Zulu"
+            android:id="@+id/shaka"
             android:checked="false"
             android:layout_below="@+id/toto"
             android:layout_alignParentStart="true"
-            android:layout_margin="10dp" />
+            android:textSize="25dp" />
+</RadioGroup>
 
         <Button
             android:layout_width="wrap_content"
