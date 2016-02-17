@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                Intent i = new Intent(getApplicationContext(), QuizActivity.class);
 
                startActivity(i);
-               //Toast.makeText(getApplicationContext(), "TOAST", Toast.LENGTH_SHORT).show();
+
                 }
               }
         );
