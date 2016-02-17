@@ -1,6 +1,7 @@
 package com.cs407.thequiz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -95,6 +96,10 @@ public class Q2_Fragment extends Fragment implements View.OnClickListener{
                     QuizActivity.correct++;
                     Toast.makeText(getActivity().getApplicationContext(), "That is correct", Toast.LENGTH_LONG).show();
                 }
+
+
+                    Intent i = new Intent(getActivity().getApplicationContext(), FinishActivity.class);
+                    getActivity().startActivity(i);
 
             }
             }
