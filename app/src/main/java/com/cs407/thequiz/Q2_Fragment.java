@@ -87,16 +87,14 @@ public class Q2_Fragment extends Fragment implements View.OnClickListener{
                 if(txt.equalsIgnoreCase("")){
                     Toast.makeText(getActivity().getApplicationContext(),
                             "Please enter an answer",
-                            Toast.LENGTH_SHORT);
+                            Toast.LENGTH_SHORT).show();
 
                 }
                 else{
 
                 if (txt.equalsIgnoreCase("Mozambique") || txt.equalsIgnoreCase("Moz")) {
                     QuizActivity.correct++;
-                    Toast.makeText(getActivity().getApplicationContext(), "That is correct", Toast.LENGTH_LONG).show();
                 }
-
 
                     Intent i = new Intent(getActivity().getApplicationContext(), FinishActivity.class);
                     getActivity().startActivity(i);
