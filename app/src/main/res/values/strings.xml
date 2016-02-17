@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">The Quiz</string>
+    <string name="app_name">Africa Quiz</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="zero">Are you ignorant?</string>
+    <string name="one">So close!</string>
+    <string name="two">Are you a prince?</string>
 </resources>

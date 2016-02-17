@@ -22,15 +22,16 @@ public class FinishActivity extends AppCompatActivity {
         TextView comment = (TextView) findViewById(R.id.txt_comment);
 
         results.setText("You scored "+correct+"/2!");
+
         switch(correct){
             case 0:
-                comment.setText("Are you ignorant?");
+                comment.setText(R.string.zero);
                 break;
             case 1:
-                comment.setText("So close!");
+                comment.setText(R.string.one);
                 break;
             case 2:
-                comment.setText("Are you a prince?");
+                comment.setText(R.string.two);
                 break;
 
         }
@@ -43,7 +44,7 @@ public class FinishActivity extends AppCompatActivity {
 
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
-                
+
             }
         });
 
