@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
@@ -74,23 +75,35 @@ public class Q1Fragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_q1, container, false);
-        Button q1_submit = (Button) view.findViewById(R.id.btn_q1_submit);
+        final RadioGroup group = (RadioGroup) view.findViewById(R.id.q1_radio_group);
+
+
+        final Button q1_submit = (Button) view.findViewById(R.id.btn_q1_submit);
         final RadioButton toto = (RadioButton) view.findViewById(R.id.toto);
         q1_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(getActivity().getApplicationContext(), "Submit was clicked", Toast.LENGTH_LONG).show();
-                if(toto.isChecked()){
-                    Toast.makeText(getActivity().getApplicationContext(), "Toto is correct", Toast.LENGTH_LONG).show();
+
+                if(group.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            "Please select an option",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+
+                    q1_submit.setClickable(false);
+                    if (toto.isChecked()) {
+                        QuizActivity.correct++;
+                        Toast.makeText(getActivity().getApplicationContext(),
+                                QuizActivity.correct, Toast.LENGTH_SHORT).show();
+                    }
+
+
+
+
+
 
                 }
-                else{
-                    Toast.makeText(getActivity().getApplicationContext(), "You are wrong", Toast.LENGTH_LONG).show();
-                }
-
-
-
             }
         });
 

@@ -28,7 +28,8 @@
     android:layout_height="wrap_content"
     android:layout_centerVertical="true"
     android:layout_alignStart="@+id/btn_q1_submit"
-    android:layout_marginStart="48dp">
+    android:layout_marginStart="48dp"
+    android:id="@+id/q1_radio_group">
 
         <RadioButton
             android:layout_width="wrap_content"

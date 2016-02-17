@@ -33,12 +33,12 @@ public class QuizActivity extends FragmentActivity implements Q1Fragment.OnFragm
         q1.setArguments(getIntent().getExtras());
 
         Q2_Fragment q2 = new Q2_Fragment();
-        q2.setArguments(getIntent().getExtras());
+
 
         //TA implementation
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.quiz_fragment_container, q2)
+                .replace(R.id.quiz_fragment_container, q1)
                 .addToBackStack(null)
                 .commit();
         //TA end

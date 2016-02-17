@@ -9,14 +9,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int correct;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        correct = 0;
 
 
         Button btn = (Button) findViewById(R.id.start_btn);
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
              public void onClick(View v) {
 
                Intent i = new Intent(getApplicationContext(), QuizActivity.class);
-               i.putExtra("correct", correct);
+
                startActivity(i);
                //Toast.makeText(getApplicationContext(), "TOAST", Toast.LENGTH_SHORT).show();
                 }
