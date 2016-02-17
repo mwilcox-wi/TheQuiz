@@ -18,12 +18,13 @@
             android:id="@+id/q1_text"
             android:textAlignment="center"
             android:textColor="#000"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="20dp"
             android:paddingEnd="5dp"
             android:paddingStart="5dp"
             android:text="According to the 80&apos;s rock band Toto, who blessed the rains down in Africa?"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textSize="25dp" />
 <RadioGroup
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -40,7 +41,8 @@
             android:checked="false"
             android:layout_centerVertical="true"
             android:layout_alignStart="@+id/simba"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_margin="10dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -50,7 +52,8 @@
             android:layout_below="@+id/god"
             android:layout_alignParentStart="true"
             android:checked="false"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_margin="10dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -60,7 +63,8 @@
             android:checked="false"
             android:layout_below="@+id/simba"
             android:layout_alignParentStart="true"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_margin="10dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -70,7 +74,8 @@
             android:checked="false"
             android:layout_below="@+id/toto"
             android:layout_alignParentStart="true"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_margin="10dp" />
 </RadioGroup>
 
         <Button
