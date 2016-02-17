@@ -1,28 +1,32 @@
 package com.cs407.thequiz;
 
 
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
-import android.app.Fragment;
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizActivity extends FragmentActivity implements Q1Fragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        Q1Fragment q1 = new Q1Fragment();
+        q1.setArguments(getIntent().getExtras());
 
         //TA implementation
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.quiz_fragment_container, QuizFragment.newInstance(null, null))
+                .replace(R.id.quiz_fragment_container, q1)
                 .addToBackStack(null)
                 .commit();
         //TA end
+
+
+
 
 
     }
@@ -34,6 +38,8 @@ public class QuizActivity extends AppCompatActivity {
 
         return true;
     }
+
+    public void onFragmentInteraction(Uri uri){}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
